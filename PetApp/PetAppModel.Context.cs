@@ -34,6 +34,16 @@ namespace PetApp
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Vacunas> Vacunas { get; set; }
     
+        public virtual ObjectResult<ClienteDato_Result> ClienteDato()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ClienteDato_Result>("ClienteDato");
+        }
+    
+        public virtual ObjectResult<ClienteDatos_Result> ClienteDatos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ClienteDatos_Result>("ClienteDatos");
+        }
+    
         public virtual ObjectResult<Nullable<int>> sp_Login(Nullable<int> option, string email, string password)
         {
             var optionParameter = option.HasValue ?

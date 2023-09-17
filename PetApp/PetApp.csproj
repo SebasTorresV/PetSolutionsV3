@@ -58,6 +58,12 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>PetAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClienteDatos_Result.cs">
+      <DependentUpon>PetAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteDato_Result.cs">
+      <DependentUpon>PetAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ClientesxMascotas.cs">
       <DependentUpon>PetAppModel.tt</DependentUpon>
     </Compile>
@@ -162,11 +168,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <EntityDeploy Include="PetAppModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PetAppModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="PetAppModel.edmx.diagram">
       <DependentUpon>PetAppModel.edmx</DependentUpon>
     </None>
@@ -184,19 +190,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PetAppModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PetAppModel.Context.cs</LastGenOutput>
       <DependentUpon>PetAppModel.edmx</DependentUpon>
+      <LastGenOutput>PetAppModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PetAppModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PetAppModel.edmx</DependentUpon>
       <LastGenOutput>PetAppModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -60,6 +60,8 @@
           <Property Name="Enfermedad" Type="nvarchar" MaxLength="50" />
           <Property Name="FechaProxima" Type="datetime" />
         </EntityType>
+        <Function Name="ClienteDato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ClienteDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Option" Type="int" Mode="In" />
           <Parameter Name="Email" Type="nvarchar" Mode="In" />
@@ -140,12 +142,22 @@
           <EntitySet Name="Pesos" EntityType="Self.Pesos" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Vacunas" EntityType="Self.Vacunas" />
+          <FunctionImport Name="ClienteDato" ReturnType="Collection(PetAppModel.ClienteDato_Result)" />
+          <FunctionImport Name="ClienteDatos" ReturnType="Collection(PetAppModel.ClienteDatos_Result)" />
           <FunctionImport Name="sp_Login" ReturnType="Collection(Int32)">
             <Parameter Name="Option" Mode="In" Type="Int32" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="ClienteDato_Result">
+          <Property Type="Int32" Name="IdCliente" Nullable="false" />
+          <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="ClienteDatos_Result">
+          <Property Type="Int32" Name="IdCliente" Nullable="false" />
+          <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -213,6 +225,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ClienteDato" FunctionName="PetAppModel.Store.ClienteDato">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PetAppModel.ClienteDato_Result">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ClienteDatos" FunctionName="PetAppModel.Store.ClienteDatos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PetAppModel.ClienteDatos_Result">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Login" FunctionName="PetAppModel.Store.sp_Login" />
         </EntityContainerMapping>
       </Mapping>
