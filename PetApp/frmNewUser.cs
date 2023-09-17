@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-
 namespace PetApp
 {
     public partial class frmNewUser : Form
@@ -45,24 +44,34 @@ namespace PetApp
 
             using (var db = new PetAppContext())
             {
-                // Convierte la contraseña de texto claro en bytes utilizando UTF-8.
-                byte[] contraseñaBytes = Encoding.UTF8.GetBytes(contraseñaTextoClaro1);
+                // Verifica si el usuario ya existe en la base de datos.
+                var usuarioExistente = db.Usuarios.FirstOrDefault(u => u.Email == correoElectronico);
 
-                var nuevoUsuario = new Usuarios()
+                if (usuarioExistente != null)
                 {
-                    Email = correoElectronico, // Utiliza el correo electrónico validado.
-                    Contrasena = contraseñaBytes // Almacena la contraseña como bytes.
-                };
+                    MessageBox.Show("El usuario ya existe en la base de datos. Por favor, elija otro correo electrónico.");
+                }
+                else
+                {
+                    // Si el usuario no existe, procede a agregarlo.
+                    byte[] contraseñaBytes = Encoding.UTF8.GetBytes(contraseñaTextoClaro1);
 
-                db.Usuarios.Add(nuevoUsuario);
-                db.SaveChanges();
+                    var nuevoUsuario = new Usuarios()
+                    {
+                        Email = correoElectronico,
+                        Contrasena = contraseñaBytes
+                    };
 
-                MessageBox.Show("Nuevo usuario registrado exitosamente.");
+                    db.Usuarios.Add(nuevoUsuario);
+                    db.SaveChanges();
 
-                // Los TextBox quedan en blanco para poder agregar otro usuario
-                txtEmail.Text = "";
-                txtPass1.Text = "";
-                txtPass2.Text = "";
+                    MessageBox.Show("Nuevo usuario registrado exitosamente.");
+
+                    // Los TextBox quedan en blanco para poder agregar otro usuario
+                    txtEmail.Text = "";
+                    txtPass1.Text = "";
+                    txtPass2.Text = "";
+                }
             }
         }
 

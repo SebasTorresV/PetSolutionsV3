@@ -56,7 +56,7 @@
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,14 +103,14 @@
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.registroToolStripMenuItem.Text = "Registro de Vacunas";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // registroDePesoToolStripMenuItem
             // 
             this.registroDePesoToolStripMenuItem.Name = "registroDePesoToolStripMenuItem";
-            this.registroDePesoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registroDePesoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.registroDePesoToolStripMenuItem.Text = "Registro de Peso";
             this.registroDePesoToolStripMenuItem.Click += new System.EventHandler(this.registroDePesoToolStripMenuItem_Click);
             // 
@@ -168,11 +168,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario principal de Mascota";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
