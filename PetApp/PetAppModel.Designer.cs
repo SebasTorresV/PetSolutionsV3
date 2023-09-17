@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Sebas\Downloads\PetSolutionsV2-d8ed6282515688e22621e23472d1c7138a4b478c\PetSolutionsV2-d8ed6282515688e22621e23472d1c7138a4b478c\PetApp\PetAppModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Sebas\Desktop\PetSolutionsV\PetSolutionsV2-d8ed6282515688e22621e23472d1c7138a4b478c\PetApp\PetAppModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

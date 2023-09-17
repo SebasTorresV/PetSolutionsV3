@@ -56,6 +56,12 @@ namespace PetApp
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            var frmNewCustomer = new frmNewCustomer();
+            frmNewCustomer.MdiParent = this;
+            frmNewCustomer.Show();
+
+
+
         }
 
         private void registroDePesoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,38 +78,9 @@ namespace PetApp
                 "Alias: Ajolote \n\n" +
                 "Dudede de mi conocimento por un momento, pero la IA me salvó jsjsjs \n\n" +
                 "Contacto: 202102202@gmail.com";
-
-
-            string arteAscii =    "⣿⣿⣿⣿⣿⣏⣾⣟⣿⣻⢯⢷⣟⣞⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" +
-                                  "⣿⣿⣿⣿⣟⣼⣯⣿⡽⣯⡻⡷⣽⡽⣧⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" +
-                                  "⣿⣿⡿⣹⣾⣿⣿⣿⣻⣷⣻⣟⣾⢿⣯⣿⣾⡻⣿⣿⣿⣿⣿⣿⣿⣿\n" +
-                                  "⣟⣿⢾⡿⣷⣿⡻⣿⢽⢯⢿⡽⣟⢿⡳⣿⣻⡿⣮⡽⣿⣿⣿⣿⣿⡟\n" +
-                                  "⢞⠙⢍⠉⠊⠄⠑⡀⠁⠂⠂⠠⠈⠈⢁⠉⠊⠛⠝⢿⣮⣿⣿⣿⣿⡘\n" +
-                                  "⡄⠡⠀⠄⠁⠀⠠⠀⠀⠐⠀⠀⢀⠀⠀⠀⠄⠀⠠⠀⠃⣿⣿⣿⣷⣔\n" +
-                                  "⣦⡵⠀⠐⢄⢂⠀⠐⠀⠀⠁⢀⠀⡈⢀⠀⠁⡀⢐⣵⣿⣿⣿⣿⣿⣿\n" +
-                                  "⣿⣿⠄⣮⢿⡁⢔⣑⢂⠂⡂⠡⡀⢄⠂⡐⣌⢲⣽⢟⡃⣩⣿⣿⣿\n" +
-                                  "⣿⣿⠁⢘⡅⡠⢈⢎⠱⡁⢪⠠⡑⢔⣼⣿⣷⠿⣿⣧⠀⡳⣿⣿⣿\n" +
-                                  "⣿⣿⣿⡶⠠⠑⣔⣅⢔⣡⡪⢊⠐⡩⠺⢻⣿⡟⡡⢘⣷⠈⡽⢿⣿\n" +
-                                  "⣿⣿⣿⣿⣼⣰⣿⣿⣿⢯⡳⢠⠡⢑⢑⢔⠤⠐⢸⣿⣿⠀⡑⠝⢯\n" +
-                                  "⣿⣿⢟⣿⢳⢯⡚⣾⡅⡯⡪⢆⠕⡨⠠⠡⡬⣿⣿⡆⠙⡻⢟⢿⣿\n" +
-                                  "⣿⣿⢪⠃⣴⡇⢊⣿⣏⢞⢕⢣⡪⣲⢝⣞⣵⣏⢙⣷⣀⠑⠢⣑⣿\n" +
-                                  "⣿⣿⡖⢨⣿⣿⣿⣿⣝⣯⢷⣫⣻⣽⡯⣿⢽⡍⡿⣿⣿⣾⡔⣢⣽\n" +
-                                  "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡮⣳⢿⢮⣟⢜⢗⢽⡙⣯⢻⣿⣿⣿⣿\n" +
-                                  "⣿⣿⣿⣿⣿⡿⣻⣫⣮⣻⣋⣾⣝⢿⣼⣿⣽⠫⢮⢣⠙⢼⣿⣿⣿\n" +
-                                  "⣿⣿⣿⣿⣿⣚⠕\n" +
-                                  "Es un meme lic, no se enoje xd";
-
             
-
-                MessageBox.Show(arteAscii, "Arte ASCII", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-
-
-            #endregion
-
-
-
             MessageBox.Show(mensaje, "Acerca de PetApp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            #endregion
         }
 
     }

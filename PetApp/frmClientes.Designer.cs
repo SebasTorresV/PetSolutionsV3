@@ -106,7 +106,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmCliente
+            // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,8 +119,9 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtNom);
-            this.Name = "frmCliente";
-            this.Text = "frmcliente";
+            this.Name = "frmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

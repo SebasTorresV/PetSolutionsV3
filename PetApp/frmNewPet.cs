@@ -50,14 +50,25 @@ namespace PetApp
                         Especie = especie,
                         Raza = raza,
                         ColorPelo = color,
-                        FechaNacimiento = fechaNacimiento,
-                        IdCliente = cliente.IdCliente // Asigna el ID del cliente obtenido
+                        FechaNacimiento = fechaNacimiento
                     };
 
                     db.Mascota.Add(nuevaMascota);
                     db.SaveChanges();
 
-                    MessageBox.Show("Nueva mascota registrada exitosamente.");
+                    // Después de guardar la mascota, asumamos que tienes el ID de la mascota (nuevaMascota.Id) disponible.
+
+                    // Ahora, puedes guardar la relación entre el cliente y la mascota en la tabla "ClientesxMascotas".
+                    var relacionClienteMascota = new ClientesxMascotas()
+                    {
+                        IdCliente = cliente.IdCliente,
+                        IdMascota = nuevaMascota.IdMascota // Asigna el ID de la nueva mascota
+                    };
+
+                    db.ClientesxMascotas.Add(relacionClienteMascota);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Nueva mascota registrada exitosamente y relación cliente-mascota guardada.");
                 }
                 else
                 {
