@@ -28,7 +28,7 @@ namespace PetApp
 
             // Verifica si alguno de los campos obligatorios está vacío.
             if (string.IsNullOrEmpty(alias) || string.IsNullOrEmpty(especie) || string.IsNullOrEmpty(raza)
-                || string.IsNullOrEmpty(color) || CbxNombre.SelectedIndex == -1)
+                || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(CbxNombre.Text.Trim()))
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios y seleccione un nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Salir del método si faltan campos obligatorios.
@@ -36,8 +36,8 @@ namespace PetApp
 
             using (var db = new PetAppContext())
             {
-                // Obtiene el nombre seleccionado en el ComboBox
-                string nombreCliente = CbxNombre.SelectedItem.ToString();
+                // Obtiene el nombre seleccionado desde el ComboBox
+                string nombreCliente = CbxNombre.Text.Trim();
 
                 // Realiza una consulta para obtener el cliente según el nombre
                 var cliente = db.Cliente.FirstOrDefault(c => c.NombreCompleto == nombreCliente);
@@ -73,16 +73,12 @@ namespace PetApp
             dtFechaNacimiento.Value = DateTime.Now;
         }
 
-
-
-
         private void frmNewPet_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'petAppDataSet.Cliente' table. You can move, or remove it, as needed.
             this.clienteTableAdapter.Fill(this.petAppDataSet.Cliente);
             // TODO: This line of code loads data into the 'petAppDataSet.Cliente' table. You can move, or remove it, as needed.
             this.clienteTableAdapter.Fill(this.petAppDataSet.Cliente);
-
         }
     }
 }
