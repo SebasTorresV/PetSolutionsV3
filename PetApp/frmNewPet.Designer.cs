@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,8 +44,13 @@
             this.CbxNombre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.petAppDataSet = new PetApp.PetAppDataSet();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteTableAdapter = new PetApp.PetAppDataSetTableAdapters.ClienteTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petAppDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -163,11 +169,14 @@
             // 
             // CbxNombre
             // 
+            this.CbxNombre.DataSource = this.clienteBindingSource;
+            this.CbxNombre.DisplayMember = "NombreCompleto";
             this.CbxNombre.FormattingEnabled = true;
             this.CbxNombre.Location = new System.Drawing.Point(13, 49);
             this.CbxNombre.Name = "CbxNombre";
             this.CbxNombre.Size = new System.Drawing.Size(305, 21);
             this.CbxNombre.TabIndex = 6;
+            this.CbxNombre.ValueMember = "NombreCompleto";
             // 
             // label6
             // 
@@ -188,6 +197,20 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // petAppDataSet
+            // 
+            this.petAppDataSet.DataSetName = "PetAppDataSet";
+            this.petAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.petAppDataSet;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
             // frmNewPet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,10 +222,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmNewPet";
             this.Text = "Nueva Mascota";
+            this.Load += new System.EventHandler(this.frmNewPet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petAppDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,5 +250,8 @@
         private System.Windows.Forms.ComboBox CbxNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
+        private PetAppDataSet petAppDataSet;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private PetAppDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
     }
 }
