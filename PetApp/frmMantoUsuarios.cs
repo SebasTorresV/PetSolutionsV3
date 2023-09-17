@@ -37,5 +37,10 @@ namespace PetApp
             btnEditar.Text = "Editar";
         
     }
+
+        private void frmMantoUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

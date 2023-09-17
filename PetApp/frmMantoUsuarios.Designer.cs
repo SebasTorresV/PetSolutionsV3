@@ -114,6 +114,7 @@
             this.Name = "frmMantoUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Usuarios";
+            this.Load += new System.EventHandler(this.frmMantoUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.grpEdit.ResumeLayout(false);

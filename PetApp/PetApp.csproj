@@ -120,6 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PetAppDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PetAppMascota.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetAppMascota.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PetAppModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +193,17 @@
     </None>
     <None Include="PetAppDataSet.xss">
       <DependentUpon>PetAppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PetAppMascota.xsc">
+      <DependentUpon>PetAppMascota.xsd</DependentUpon>
+    </None>
+    <None Include="PetAppMascota.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PetAppMascota.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PetAppMascota.xss">
+      <DependentUpon>PetAppMascota.xsd</DependentUpon>
     </None>
     <None Include="PetAppModel.edmx.diagram">
       <DependentUpon>PetAppModel.edmx</DependentUpon>
